@@ -4,12 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mateus Jairan - Automação & Dados</title>
+    <meta name="description"
+        content="Portfólio de Mateus Jairan — Automação, Engenharia de Dados, BI e modelos de previsão.">
+    <title>Mateus Jairan - Automação, Dados & BI</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900&display=swap"
         rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script>document.documentElement.classList.add('has-js');</script>
     <style>
         :root {
             --eink-bg: #f4f4f4;
@@ -35,6 +38,68 @@
             background: white;
             border: 1px solid #d1d1d1;
             box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .ink-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.14);
+            border-color: #a8a29e;
+        }
+
+        .project-card {
+            transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.45);
+        }
+
+        .project-card .arrow {
+            transition: transform 0.2s ease;
+        }
+
+        .project-card:hover .arrow {
+            transform: translateX(4px);
+        }
+
+        .nav-btn i {
+            transition: transform 0.2s ease;
+        }
+
+        .nav-btn:hover i {
+            transform: translateY(-2px);
+        }
+
+        .has-js .reveal {
+            opacity: 0;
+            transform: translateY(14px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .has-js .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .has-js .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+
+            .ink-card,
+            .project-card,
+            .project-card .arrow,
+            .nav-btn i {
+                transition: none;
+            }
         }
 
         ::-webkit-scrollbar {
@@ -74,20 +139,22 @@
             <h1 class="text-4xl font-bold mb-4">Mateus Jairan</h1>
 
             <p class="text-xl text-stone-600 italic mb-6">
-                Especialista em Automação & Dados
+                Automação, Engenharia de Dados & BI
             </p>
 
             <p class="text-stone-600 mb-8 max-w-lg mx-auto leading-relaxed">
-                Transformo processos manuais em soluções automatizadas.
-                Coleto, organizo e analiso dados de qualquer fonte para ajudar empresas a tomarem decisões melhores.
+                Transformo processos manuais em pipelines confiáveis. Construo scrapers, APIs,
+                datalakes e dashboards de ponta a ponta — do dado bruto à decisão.
             </p>
 
             <div class="flex flex-wrap justify-center gap-3 mb-12 ui-font">
                 <span class="px-3 py-1 border border-stone-400 text-xs">Python</span>
+                <span class="px-3 py-1 border border-stone-400 text-xs">FastAPI</span>
+                <span class="px-3 py-1 border border-stone-400 text-xs">SQL / Postgres</span>
+                <span class="px-3 py-1 border border-stone-400 text-xs">Streamlit / Dash</span>
                 <span class="px-3 py-1 border border-stone-400 text-xs">Web Scraping</span>
-                <span class="px-3 py-1 border border-stone-400 text-xs">APIs</span>
-                <span class="px-3 py-1 border border-stone-400 text-xs">Excel</span>
-                <span class="px-3 py-1 border border-stone-400 text-xs">Automação</span>
+                <span class="px-3 py-1 border border-stone-400 text-xs">Machine Learning</span>
+                <span class="px-3 py-1 border border-stone-400 text-xs">React</span>
             </div>
 
             <p class="text-xs text-stone-500 ui-font mb-8">📍 Fortaleza/CE</p>
@@ -100,6 +167,41 @@
         </div>
     </section>
 
+    <!-- CREDIBILIDADE -->
+    <section id="credibilidade" class="py-14 px-6 bg-white border-b-2 border-stone-300">
+        <div class="max-w-3xl mx-auto">
+            <p class="text-xs ui-font uppercase tracking-widest text-stone-500 mb-8 text-center">
+                Projetos reais em operação
+            </p>
+
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="border border-stone-300 p-5 text-center">
+                    <p class="text-3xl font-bold">56.390</p>
+                    <p class="text-[11px] ui-font uppercase tracking-widest text-stone-500 mt-2">produtos coletados</p>
+                    <p class="text-xs text-stone-500 italic mt-1">Catálogo Pague Menos</p>
+                </div>
+
+                <div class="border border-stone-300 p-5 text-center">
+                    <p class="text-3xl font-bold">38.265</p>
+                    <p class="text-[11px] ui-font uppercase tracking-widest text-stone-500 mt-2">itens por relatório</p>
+                    <p class="text-xs text-stone-500 italic mt-1">Estoque diário SB Farma</p>
+                </div>
+
+                <div class="border border-stone-300 p-5 text-center">
+                    <p class="text-3xl font-bold">5 min</p>
+                    <p class="text-[11px] ui-font uppercase tracking-widest text-stone-500 mt-2">atualização dos dados</p>
+                    <p class="text-xs text-stone-500 italic mt-1">Pipeline iFood</p>
+                </div>
+
+                <div class="border border-stone-300 p-5 text-center">
+                    <p class="text-3xl font-bold">92,3%</p>
+                    <p class="text-[11px] ui-font uppercase tracking-widest text-stone-500 mt-2">assertividade diária</p>
+                    <p class="text-xs text-stone-500 italic mt-1">Pricing BI · erro médio 7,71%</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- PROJETOS - LISTA -->
     <section id="projeto" class="py-20 px-6 bg-stone-900 text-white border-b-2 border-stone-800">
         <div class="max-w-3xl mx-auto">
@@ -107,50 +209,124 @@
             <h2 class="text-2xl font-bold text-center mb-12">Soluções Desenvolvidas</h2>
 
             <div class="space-y-6">
-                <!-- Projeto 1: Scraper E-commerce -->
-                <a href="#projeto-scraper"
-                    class="block border border-white/20 p-6 hover:bg-white/5 transition-colors group">
+                <!-- Projeto 1 -->
+                <a href="#projeto-ifood"
+                    class="project-card block border border-white/20 p-6 hover:bg-white/5 transition-colors group">
                     <div class="flex items-start gap-4">
                         <div class="w-14 h-14 border border-white/30 flex items-center justify-center shrink-0">
                             <i data-lucide="pill" class="w-7 h-7"></i>
                         </div>
                         <div class="flex-1">
                             <div class="flex items-center justify-between mb-2">
-                                <h3 class="font-bold ui-font text-lg">Scraper E-commerce Farmacêutico</h3>
+                                <h3 class="font-bold ui-font text-lg">iFood Analytics — BI em tempo quase real</h3>
                                 <i data-lucide="chevron-right"
-                                    class="w-5 h-5 text-white/50 group-hover:text-white transition-colors"></i>
+                                    class="arrow w-5 h-5 text-white/50 group-hover:text-white transition-colors"></i>
                             </div>
-                            <p class="text-white/60 text-sm mb-3">Coleta automatizada de preços e produtos de grandes
-                                marketplaces farmacêuticos.</p>
+                            <p class="text-white/60 text-sm mb-3">Pipeline completo de vendas iFood: ERP → Parquet →
+                                FastAPI → dashboard com atualização automática.</p>
+                            <div class="flex gap-2 flex-wrap">
+                                <span class="px-2 py-0.5 border border-white/30 text-xs ui-font">FastAPI</span>
+                                <span class="px-2 py-0.5 border border-white/30 text-xs ui-font">DuckDB</span>
+                                <span class="px-2 py-0.5 border border-white/30 text-xs ui-font">Streamlit</span>
+                                <span class="px-2 py-0.5 border border-white/30 text-xs ui-font">CI/CD</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Projeto 2 -->
+                <a href="#projeto-pricing"
+                    class="project-card block border border-white/20 p-6 hover:bg-white/5 transition-colors group">
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 border border-white/30 flex items-center justify-center shrink-0">
+                            <i data-lucide="trending-up" class="w-7 h-7"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="font-bold ui-font text-lg">Pricing BI — Previsão de vendas</h3>
+                                <i data-lucide="chevron-right"
+                                    class="arrow w-5 h-5 text-white/50 group-hover:text-white transition-colors"></i>
+                            </div>
+                            <p class="text-white/60 text-sm mb-3">Painel que estima quanto a rede deve vender no dia
+                                e se corrige ao longo do dia, conforme as vendas acontecem.</p>
                             <div class="flex gap-2 flex-wrap">
                                 <span class="px-2 py-0.5 border border-white/30 text-xs ui-font">Python</span>
-                                <span class="px-2 py-0.5 border border-white/30 text-xs ui-font">Web Scraping</span>
+                                <span class="px-2 py-0.5 border border-white/30 text-xs ui-font">XGBoost</span>
+                                <span class="px-2 py-0.5 border border-white/30 text-xs ui-font">Plotly Dash</span>
+                                <span class="px-2 py-0.5 border border-white/30 text-xs ui-font">APScheduler</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Projeto 3 -->
+                <a href="#projeto-coleta"
+                    class="project-card block border border-white/20 p-6 hover:bg-white/5 transition-colors group">
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 border border-white/30 flex items-center justify-center shrink-0">
+                            <i data-lucide="package-search" class="w-7 h-7"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="font-bold ui-font text-lg">Coleta E-commerce — Pague Menos</h3>
+                                <i data-lucide="chevron-right"
+                                    class="arrow w-5 h-5 text-white/50 group-hover:text-white transition-colors"></i>
+                            </div>
+                            <p class="text-white/60 text-sm mb-3">Scraper de catálogo inteiro via GraphQL, com API de
+                                jobs assíncronos e exportação em Excel.</p>
+                            <div class="flex gap-2 flex-wrap">
+                                <span class="px-2 py-0.5 border border-white/30 text-xs ui-font">GraphQL</span>
+                                <span class="px-2 py-0.5 border border-white/30 text-xs ui-font">FastAPI</span>
                                 <span class="px-2 py-0.5 border border-white/30 text-xs ui-font">56.390 produtos</span>
                             </div>
                         </div>
                     </div>
                 </a>
 
-                <!-- Projeto 2: Engenharia Reversa de API -->
-                <a href="#projeto-api"
-                    class="block border border-white/20 p-6 hover:bg-white/5 transition-colors group">
+                <!-- Projeto 4 -->
+                <a href="#projeto-estoque"
+                    class="project-card block border border-white/20 p-6 hover:bg-white/5 transition-colors group">
                     <div class="flex items-start gap-4">
                         <div class="w-14 h-14 border border-white/30 flex items-center justify-center shrink-0">
-                            <i data-lucide="code-2" class="w-7 h-7"></i>
+                            <i data-lucide="warehouse" class="w-7 h-7"></i>
                         </div>
                         <div class="flex-1">
                             <div class="flex items-center justify-between mb-2">
-                                <h3 class="font-bold ui-font text-lg">Engenharia Reversa de APIs</h3>
+                                <h3 class="font-bold ui-font text-lg">Consulta Estoque SB — ETL de estoque</h3>
                                 <i data-lucide="chevron-right"
-                                    class="w-5 h-5 text-white/50 group-hover:text-white transition-colors"></i>
+                                    class="arrow w-5 h-5 text-white/50 group-hover:text-white transition-colors"></i>
                             </div>
-                            <p class="text-white/60 text-sm mb-3">Análise e mapeamento de APIs privadas para extração
-                                automatizada de dados e geração de relatórios customizados.</p>
+                            <p class="text-white/60 text-sm mb-3">Pipeline diário que consolida estoque, vendas e
+                                cadastro de 38 mil produtos, com Excel e envio automático por email.</p>
                             <div class="flex gap-2 flex-wrap">
                                 <span class="px-2 py-0.5 border border-white/30 text-xs ui-font">Python</span>
-                                <span class="px-2 py-0.5 border border-white/30 text-xs ui-font">API REST</span>
-                                <span class="px-2 py-0.5 border border-white/30 text-xs ui-font">GraphQL</span>
-                                <span class="px-2 py-0.5 border border-white/30 text-xs ui-font">Relatórios</span>
+                                <span class="px-2 py-0.5 border border-white/30 text-xs ui-font">Prefect</span>
+                                <span class="px-2 py-0.5 border border-white/30 text-xs ui-font">PostgreSQL</span>
+                                <span class="px-2 py-0.5 border border-white/30 text-xs ui-font">Docker</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Projeto 5 -->
+                <a href="#projeto-cupons"
+                    class="project-card block border border-white/20 p-6 hover:bg-white/5 transition-colors group">
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 border border-white/30 flex items-center justify-center shrink-0">
+                            <i data-lucide="receipt" class="w-7 h-7"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="font-bold ui-font text-lg">Análise de Cupons Fiscais</h3>
+                                <i data-lucide="chevron-right"
+                                    class="arrow w-5 h-5 text-white/50 group-hover:text-white transition-colors"></i>
+                            </div>
+                            <p class="text-white/60 text-sm mb-3">ETL de vendas com cross-selling, elasticidade de
+                                preço, regras de associação e API de recomendações.</p>
+                            <div class="flex gap-2 flex-wrap">
+                                <span class="px-2 py-0.5 border border-white/30 text-xs ui-font">Postgres</span>
+                                <span class="px-2 py-0.5 border border-white/30 text-xs ui-font">Parquet</span>
+                                <span class="px-2 py-0.5 border border-white/30 text-xs ui-font">FP-Growth</span>
                             </div>
                         </div>
                     </div>
@@ -159,44 +335,234 @@
         </div>
     </section>
 
-    <!-- PROJETO 1: SCRAPER E-COMMERCE (Detalhes) -->
-    <section id="projeto-scraper" class="py-20 px-6 bg-white border-b-2 border-stone-300">
+    <!-- PROJETO 1: IFOOD ANALYTICS -->
+    <section id="projeto-ifood" class="py-20 px-6 bg-white border-b-2 border-stone-300">
         <div class="max-w-2xl mx-auto">
-            <h2 class="text-2xl font-bold text-center mb-2">O que você recebe</h2>
+            <p class="text-xs ui-font uppercase tracking-widest text-stone-500 mb-4 text-center">Projeto 01</p>
+            <h2 class="text-2xl font-bold text-center mb-2">iFood Analytics</h2>
             <div class="h-0.5 w-12 bg-black mx-auto mb-4"></div>
-            <p class="text-center text-stone-500 italic mb-12">Dados completos prontos para análise</p>
+            <p class="text-center text-stone-500 italic mb-12">BI de vendas com dados frescos a cada minuto</p>
 
             <div class="space-y-6">
                 <div class="ink-card p-5 flex gap-4">
                     <div class="w-12 h-12 border border-stone-400 flex items-center justify-center shrink-0">
-                        <i data-lucide="tag" class="w-6 h-6"></i>
+                        <i data-lucide="refresh-cw" class="w-6 h-6"></i>
                     </div>
                     <div>
-                        <h3 class="font-bold mb-1 ui-font">Preços Atualizados</h3>
-                        <p class="text-stone-600 text-sm">Todos os preços de todos os produtos do e-commerce em uma
-                            planilha organizada.</p>
+                        <h3 class="font-bold mb-1 ui-font">Ingestão incremental</h3>
+                        <p class="text-stone-600 text-sm">Ciclos a cada 5 minutos com cursor, deduplicação por item,
+                            lockfile e reconciliação automática contra o ERP.</p>
                     </div>
                 </div>
 
                 <div class="ink-card p-5 flex gap-4">
                     <div class="w-12 h-12 border border-stone-400 flex items-center justify-center shrink-0">
-                        <i data-lucide="percent" class="w-6 h-6"></i>
+                        <i data-lucide="database" class="w-6 h-6"></i>
                     </div>
                     <div>
-                        <h3 class="font-bold mb-1 ui-font">Descontos Identificados</h3>
-                        <p class="text-stone-600 text-sm">Promoções e descontos são calculados automaticamente para cada
-                            produto.</p>
+                        <h3 class="font-bold mb-1 ui-font">Datalake em Parquet</h3>
+                        <p class="text-stone-600 text-sm">Particionamento por dia e loja, escrita atômica, quarentena
+                            de re-pulls vazios e agregados incrementais.</p>
                     </div>
                 </div>
 
                 <div class="ink-card p-5 flex gap-4">
                     <div class="w-12 h-12 border border-stone-400 flex items-center justify-center shrink-0">
-                        <i data-lucide="users" class="w-6 h-6"></i>
+                        <i data-lucide="server" class="w-6 h-6"></i>
                     </div>
                     <div>
-                        <h3 class="font-bold mb-1 ui-font">Múltiplos Vendedores</h3>
-                        <p class="text-stone-600 text-sm">Informações de todos os sellers do marketplace farmacêutico.
-                        </p>
+                        <h3 class="font-bold mb-1 ui-font">API FastAPI</h3>
+                        <p class="text-stone-600 text-sm">Consultas em milissegundos via DuckDB, autenticação por
+                            token, rate limit e telemetria OpenTelemetry.</p>
+                    </div>
+                </div>
+
+                <div class="ink-card p-5 flex gap-4">
+                    <div class="w-12 h-12 border border-stone-400 flex items-center justify-center shrink-0">
+                        <i data-lucide="gauge" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold mb-1 ui-font">Dashboard ao vivo</h3>
+                        <p class="text-stone-600 text-sm">KPIs, vendas por hora, ranking de lojas e top produtos, com
+                            auto-refresh de 1 minuto e status de qualidade dos dados.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex gap-2 flex-wrap justify-center mt-10 ui-font">
+                <span class="px-3 py-1 border border-stone-400 text-xs">Python</span>
+                <span class="px-3 py-1 border border-stone-400 text-xs">FastAPI</span>
+                <span class="px-3 py-1 border border-stone-400 text-xs">Parquet</span>
+                <span class="px-3 py-1 border border-stone-400 text-xs">DuckDB</span>
+                <span class="px-3 py-1 border border-stone-400 text-xs">Streamlit</span>
+                <span class="px-3 py-1 border border-stone-400 text-xs">Pytest</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- NÚMEROS IFOOD -->
+    <section id="numeros-ifood" class="py-20 px-6 bg-stone-900 text-white border-b-2 border-stone-800">
+        <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-2xl font-bold mb-12 ui-font">Números da Operação</h2>
+
+            <div class="grid grid-cols-3 gap-8">
+                <div>
+                    <p class="text-4xl font-bold">5 min</p>
+                    <p class="text-white/60 text-sm mt-2 ui-font">Ingestão</p>
+                </div>
+                <div>
+                    <p class="text-4xl font-bold">1 min</p>
+                    <p class="text-white/60 text-sm mt-2 ui-font">Atualização</p>
+                </div>
+                <div>
+                    <p class="text-4xl font-bold">24/7</p>
+                    <p class="text-white/60 text-sm mt-2 ui-font">Operação</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJETO 2: PRICING BI -->
+    <section id="projeto-pricing" class="py-20 px-6 border-b-2 border-stone-300">
+        <div class="max-w-2xl mx-auto">
+            <p class="text-xs ui-font uppercase tracking-widest text-stone-500 mb-4 text-center">Projeto 02</p>
+            <h2 class="text-2xl font-bold text-center mb-2">Pricing BI</h2>
+            <div class="h-0.5 w-12 bg-black mx-auto mb-4"></div>
+            <p class="text-center text-stone-500 italic mb-12">Uma resposta simples para uma pergunta diária: quanto
+                vamos vender hoje?</p>
+
+            <div class="space-y-6">
+                <div class="ink-card p-5 flex gap-4">
+                    <div class="w-12 h-12 border border-stone-400 flex items-center justify-center shrink-0">
+                        <i data-lucide="git-merge" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold mb-1 ui-font">Duas formas de prever, uma resposta</h3>
+                        <p class="text-stone-600 text-sm">O sistema combina duas maneiras de estimar as vendas: uma olha
+                            o histórico e a outra observa o comportamento do dia a dia. Quando as duas concordam, a
+                            previsão fica mais confiável.</p>
+                    </div>
+                </div>
+
+                <div class="ink-card p-5 flex gap-4">
+                    <div class="w-12 h-12 border border-stone-400 flex items-center justify-center shrink-0">
+                        <i data-lucide="activity" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold mb-1 ui-font">Atualização ao longo do dia</h3>
+                        <p class="text-stone-600 text-sm">De manhã, o painel mostra a expectativa para o dia. Conforme
+                            as vendas entram, ele ajusta o número e se aproxima cada vez mais do resultado real.</p>
+                    </div>
+                </div>
+
+                <div class="ink-card p-5 flex gap-4">
+                    <div class="w-12 h-12 border border-stone-400 flex items-center justify-center shrink-0">
+                        <i data-lucide="calendar-clock" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold mb-1 ui-font">Trabalho automático</h3>
+                        <p class="text-stone-600 text-sm">Todos os dias o sistema busca os dados, recalcula a previsão e
+                            atualiza o painel sozinho — sem ninguém precisar apertar um botão.</p>
+                    </div>
+                </div>
+
+                <div class="ink-card p-5 flex gap-4">
+                    <div class="w-12 h-12 border border-stone-400 flex items-center justify-center shrink-0">
+                        <i data-lucide="target" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold mb-1 ui-font">Fácil de acompanhar</h3>
+                        <p class="text-stone-600 text-sm">O painel compara o previsto com o realizado, mostra se a meta
+                            do mês está ao alcance e projeta os próximos dias e o restante do ano.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex gap-2 flex-wrap justify-center mt-10 ui-font">
+                <span class="px-3 py-1 border border-stone-400 text-xs">FastAPI</span>
+                <span class="px-3 py-1 border border-stone-400 text-xs">Plotly Dash</span>
+                <span class="px-3 py-1 border border-stone-400 text-xs">Holt-Winters</span>
+                <span class="px-3 py-1 border border-stone-400 text-xs">XGBoost</span>
+                <span class="px-3 py-1 border border-stone-400 text-xs">Postgres</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODELO / NÚMEROS PRICING -->
+    <section id="modelo-pricing" class="py-20 px-6 bg-stone-900 text-white border-b-2 border-stone-800">
+        <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-2xl font-bold mb-4 ui-font">Como funciona, em palavras simples</h2>
+            <p class="text-white/60 text-sm max-w-lg mx-auto mb-12">Sem planilhas manuais e sem termos complicados:
+                quatro ideias explicam o projeto.</p>
+
+            <div class="grid grid-cols-2 gap-6 text-left">
+                <div class="border border-white/20 p-4">
+                    <i data-lucide="layers" class="w-6 h-6 mb-2"></i>
+                    <h3 class="font-bold ui-font text-sm mb-1">Duas cabeças pensam melhor</h3>
+                    <p class="text-white/60 text-xs">Uma forma de prever estuda o histórico de vendas; a outra observa
+                        os detalhes do cotidiano. A resposta final é a média das duas.</p>
+                </div>
+                <div class="border border-white/20 p-4">
+                    <i data-lucide="shield" class="w-6 h-6 mb-2"></i>
+                    <h3 class="font-bold ui-font text-sm mb-1">Margem de segurança</h3>
+                    <p class="text-white/60 text-xs">O painel também mostra uma faixa provável: o mínimo e o máximo que
+                        se pode esperar de vendas no dia.</p>
+                </div>
+                <div class="border border-white/20 p-4">
+                    <i data-lucide="calendar-days" class="w-6 h-6 mb-2"></i>
+                    <h3 class="font-bold ui-font text-sm mb-1">Datas especiais</h3>
+                    <p class="text-white/60 text-xs">Feriados, início e fim de mês e campanhas entram na conta para
+                        evitar surpresas na previsão.</p>
+                </div>
+                <div class="border border-white/20 p-4">
+                    <i data-lucide="server-cog" class="w-6 h-6 mb-2"></i>
+                    <h3 class="font-bold ui-font text-sm mb-1">Nunca fica sem resposta</h3>
+                    <p class="text-white/60 text-xs">Se algo falhar, o sistema usa a última previsão salva e continua
+                        funcionando até se recuperar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJETO 3: COLETA PAGUE MENOS -->
+    <section id="projeto-coleta" class="py-20 px-6 bg-white border-b-2 border-stone-300">
+        <div class="max-w-2xl mx-auto">
+            <p class="text-xs ui-font uppercase tracking-widest text-stone-500 mb-4 text-center">Projeto 03</p>
+            <h2 class="text-2xl font-bold text-center mb-2">Coleta E-commerce</h2>
+            <div class="h-0.5 w-12 bg-black mx-auto mb-4"></div>
+            <p class="text-center text-stone-500 italic mb-12">Catálogo inteiro da Pague Menos em uma planilha</p>
+
+            <div class="space-y-6">
+                <div class="ink-card p-5 flex gap-4">
+                    <div class="w-12 h-12 border border-stone-400 flex items-center justify-center shrink-0">
+                        <i data-lucide="search-code" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold mb-1 ui-font">API GraphQL mapeada</h3>
+                        <p class="text-stone-600 text-sm">Engenharia reversa dos endpoints do e-commerce com paginação
+                            e tratamento de falhas.</p>
+                    </div>
+                </div>
+
+                <div class="ink-card p-5 flex gap-4">
+                    <div class="w-12 h-12 border border-stone-400 flex items-center justify-center shrink-0">
+                        <i data-lucide="list-checks" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold mb-1 ui-font">Alvos flexíveis</h3>
+                        <p class="text-stone-600 text-sm">Departamentos, categorias, subcategorias, marcas ou uma lista
+                            de EANs/SKUs enviada em arquivo.</p>
+                    </div>
+                </div>
+
+                <div class="ink-card p-5 flex gap-4">
+                    <div class="w-12 h-12 border border-stone-400 flex items-center justify-center shrink-0">
+                        <i data-lucide="workflow" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold mb-1 ui-font">Jobs assíncronos</h3>
+                        <p class="text-stone-600 text-sm">Scraping em segundo plano com progresso em tempo real, logs e
+                            resultados consolidados.</p>
                     </div>
                 </div>
 
@@ -205,11 +571,19 @@
                         <i data-lucide="file-spreadsheet" class="w-6 h-6"></i>
                     </div>
                     <div>
-                        <h3 class="font-bold mb-1 ui-font">Excel Pronto</h3>
-                        <p class="text-stone-600 text-sm">Planilha organizada pronta para importar no seu sistema ou
-                            analisar.</p>
+                        <h3 class="font-bold mb-1 ui-font">Excel pronto</h3>
+                        <p class="text-stone-600 text-sm">EAN, nome, preços e ofertas organizados, com estratégia
+                            híbrida de busca para maximizar o sucesso.</p>
                     </div>
                 </div>
+            </div>
+
+            <div class="flex gap-2 flex-wrap justify-center mt-10 ui-font">
+                <span class="px-3 py-1 border border-stone-400 text-xs">Python</span>
+                <span class="px-3 py-1 border border-stone-400 text-xs">GraphQL</span>
+                <span class="px-3 py-1 border border-stone-400 text-xs">FastAPI</span>
+                <span class="px-3 py-1 border border-stone-400 text-xs">Streamlit</span>
+                <span class="px-3 py-1 border border-stone-400 text-xs">OpenPyXL</span>
             </div>
         </div>
     </section>
@@ -328,143 +702,147 @@
         </div>
     </section>
 
-    <!-- PROJETO 2: ENGENHARIA REVERSA DE API (Detalhes) -->
-    <section id="projeto-api" class="py-20 px-6 bg-white border-b-2 border-stone-300">
+    <!-- PROJETO 4: CONSULTA ESTOQUE SB -->
+    <section id="projeto-estoque" class="py-20 px-6 bg-stone-900 text-white border-b-2 border-stone-800">
         <div class="max-w-2xl mx-auto">
-            <p class="text-xs ui-font uppercase tracking-widest text-stone-500 mb-4 text-center">Projeto 2</p>
-            <h2 class="text-2xl font-bold text-center mb-2">Engenharia Reversa de APIs</h2>
+            <p class="text-xs ui-font uppercase tracking-widest text-white/50 mb-4 text-center">Projeto 04</p>
+            <h2 class="text-2xl font-bold text-center mb-2">Consulta Estoque SB</h2>
+            <div class="h-0.5 w-12 bg-white mx-auto mb-4"></div>
+            <p class="text-center text-white/60 italic mb-12">Relatório consolidado de estoque, do ERP ao email</p>
+
+            <div class="grid grid-cols-2 gap-6 text-left">
+                <div class="border border-white/20 p-4">
+                    <i data-lucide="database" class="w-6 h-6 mb-2"></i>
+                    <h3 class="font-bold ui-font text-sm mb-1">Extração SQL</h3>
+                    <p class="text-white/60 text-xs">Estoque, cadastro, vendas de 30/60 dias e faceamento em uma única
+                        consulta</p>
+                </div>
+                <div class="border border-white/20 p-4">
+                    <i data-lucide="sparkles" class="w-6 h-6 mb-2"></i>
+                    <h3 class="font-bold ui-font text-sm mb-1">Enriquecimento semântico</h3>
+                    <p class="text-white/60 text-xs">Radar em Parquet com fallback para Excel e validações de
+                        qualidade</p>
+                </div>
+                <div class="border border-white/20 p-4">
+                    <i data-lucide="workflow" class="w-6 h-6 mb-2"></i>
+                    <h3 class="font-bold ui-font text-sm mb-1">Orquestração Prefect</h3>
+                    <p class="text-white/60 text-xs">Extract, Load, Notify e Cleanup com retries e schedule Seg–Sex</p>
+                </div>
+                <div class="border border-white/20 p-4">
+                    <i data-lucide="mail-check" class="w-6 h-6 mb-2"></i>
+                    <h3 class="font-bold ui-font text-sm mb-1">Entrega monitorada</h3>
+                    <p class="text-white/60 text-xs">Excel por email, manifest de execução, health check e Docker
+                        Compose</p>
+                </div>
+            </div>
+
+            <div class="flex gap-2 flex-wrap justify-center mt-10 ui-font">
+                <span class="px-2 py-0.5 border border-white/30 text-xs">38.265 produtos</span>
+                <span class="px-2 py-0.5 border border-white/30 text-xs">~55 s</span>
+                <span class="px-2 py-0.5 border border-white/30 text-xs">Seg–Sex 04:30</span>
+                <span class="px-2 py-0.5 border border-white/30 text-xs">Prefect</span>
+                <span class="px-2 py-0.5 border border-white/30 text-xs">Docker</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJETO 5: CUPONS FISCAIS -->
+    <section id="projeto-cupons" class="py-20 px-6 bg-white border-b-2 border-stone-300">
+        <div class="max-w-2xl mx-auto">
+            <p class="text-xs ui-font uppercase tracking-widest text-stone-500 mb-4 text-center">Projeto 05</p>
+            <h2 class="text-2xl font-bold text-center mb-2">Análise de Cupons Fiscais</h2>
             <div class="h-0.5 w-12 bg-black mx-auto mb-4"></div>
-            <p class="text-center text-stone-500 italic mb-12">Transformando APIs privadas em fontes de dados
-                estruturados</p>
+            <p class="text-center text-stone-500 italic mb-12">Do banco de vendas ao insight de negócio</p>
 
             <div class="space-y-6">
-                <div class="ink-card p-5 flex gap-4">
-                    <div class="w-12 h-12 border border-stone-400 flex items-center justify-center shrink-0">
-                        <i data-lucide="search-code" class="w-6 h-6"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold mb-1 ui-font">Análise de Requisições</h3>
-                        <p class="text-stone-600 text-sm">Identificação e mapeamento de endpoints, headers e parâmetros
-                            de autenticação de APIs privadas.</p>
-                    </div>
-                </div>
-
                 <div class="ink-card p-5 flex gap-4">
                     <div class="w-12 h-12 border border-stone-400 flex items-center justify-center shrink-0">
                         <i data-lucide="database" class="w-6 h-6"></i>
                     </div>
                     <div>
-                        <h3 class="font-bold mb-1 ui-font">Extração Automatizada</h3>
-                        <p class="text-stone-600 text-sm">Scripts Python que coletam dados de APIs REST e GraphQL de
-                            forma contínua e confiável.</p>
+                        <h3 class="font-bold mb-1 ui-font">ETL em lotes</h3>
+                        <p class="text-stone-600 text-sm">Extração do PostgreSQL em blocos de 50 mil registros para
+                            Parquet/CSV, com Excel de resumo por classificação.</p>
                     </div>
                 </div>
 
                 <div class="ink-card p-5 flex gap-4">
                     <div class="w-12 h-12 border border-stone-400 flex items-center justify-center shrink-0">
-                        <i data-lucide="file-bar-chart" class="w-6 h-6"></i>
+                        <i data-lucide="shopping-basket" class="w-6 h-6"></i>
                     </div>
                     <div>
-                        <h3 class="font-bold mb-1 ui-font">Relatórios Customizados</h3>
-                        <p class="text-stone-600 text-sm">Geração automática de relatórios em Excel, PDF ou dashboards
-                            interativos com os dados coletados.</p>
+                        <h3 class="font-bold mb-1 ui-font">Cross-selling e elasticidade</h3>
+                        <p class="text-stone-600 text-sm">Pares de produtos, sensibilidade preço-demanda e análise de
+                            cupons exclusivos por categoria.</p>
                     </div>
                 </div>
 
                 <div class="ink-card p-5 flex gap-4">
                     <div class="w-12 h-12 border border-stone-400 flex items-center justify-center shrink-0">
-                        <i data-lucide="refresh-cw" class="w-6 h-6"></i>
+                        <i data-lucide="share-2" class="w-6 h-6"></i>
                     </div>
                     <div>
-                        <h3 class="font-bold mb-1 ui-font">Atualização Programada</h3>
-                        <p class="text-stone-600 text-sm">Agendamento de coletas automáticas para manter os dados sempre
-                            atualizados.</p>
+                        <h3 class="font-bold mb-1 ui-font">Regras de associação</h3>
+                        <p class="text-stone-600 text-sm">FP-Growth com treinamento agendado e manutenção do modelo de
+                            recomendações.</p>
                     </div>
                 </div>
+
+                <div class="ink-card p-5 flex gap-4">
+                    <div class="w-12 h-12 border border-stone-400 flex items-center justify-center shrink-0">
+                        <i data-lucide="plug-zap" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold mb-1 ui-font">API de recomendações</h3>
+                        <p class="text-stone-600 text-sm">FastAPI para consultas e sugestões de produtos, além de
+                            dashboards Streamlit para elasticidade.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex gap-2 flex-wrap justify-center mt-10 ui-font">
+                <span class="px-3 py-1 border border-stone-400 text-xs">Python</span>
+                <span class="px-3 py-1 border border-stone-400 text-xs">SQLAlchemy</span>
+                <span class="px-3 py-1 border border-stone-400 text-xs">Parquet</span>
+                <span class="px-3 py-1 border border-stone-400 text-xs">FP-Growth</span>
+                <span class="px-3 py-1 border border-stone-400 text-xs">FastAPI</span>
+                <span class="px-3 py-1 border border-stone-400 text-xs">Streamlit</span>
             </div>
         </div>
     </section>
 
-    <!-- PROCESSO DE ENGENHARIA REVERSA -->
-    <section id="processo-api" class="py-20 px-6 border-b-2 border-stone-300">
+    <!-- OUTROS PROJETOS -->
+    <section id="outros" class="py-20 px-6 bg-stone-900 text-white border-b-2 border-stone-800">
         <div class="max-w-2xl mx-auto">
-            <h2 class="text-2xl font-bold text-center mb-2">Como Funciona</h2>
-            <div class="h-0.5 w-12 bg-black mx-auto mb-4"></div>
-            <p class="text-center text-stone-500 italic mb-12">O processo de coleta via API</p>
+            <h2 class="text-2xl font-bold text-center mb-2 ui-font">Outros Trabalhos</h2>
+            <div class="h-0.5 w-12 bg-white mx-auto mb-4"></div>
+            <p class="text-center text-white/60 italic mb-12">Ferramentas e automações do dia a dia</p>
 
-            <div class="space-y-8">
-                <div class="flex gap-4 items-start">
-                    <div
-                        class="w-10 h-10 bg-stone-900 text-white flex items-center justify-center font-bold ui-font shrink-0">
-                        1</div>
-                    <div>
-                        <h3 class="font-bold ui-font mb-1">Análise do Sistema</h3>
-                        <p class="text-stone-600 text-sm">Estudo das requisições do sistema alvo para identificar
-                            endpoints e estrutura de dados.</p>
-                    </div>
-                </div>
-
-                <div class="flex gap-4 items-start">
-                    <div
-                        class="w-10 h-10 bg-stone-900 text-white flex items-center justify-center font-bold ui-font shrink-0">
-                        2</div>
-                    <div>
-                        <h3 class="font-bold ui-font mb-1">Mapeamento da API</h3>
-                        <p class="text-stone-600 text-sm">Documentação completa dos endpoints, parâmetros e métodos de
-                            autenticação.</p>
-                    </div>
-                </div>
-
-                <div class="flex gap-4 items-start">
-                    <div
-                        class="w-10 h-10 bg-stone-900 text-white flex items-center justify-center font-bold ui-font shrink-0">
-                        3</div>
-                    <div>
-                        <h3 class="font-bold ui-font mb-1">Desenvolvimento do Coletor</h3>
-                        <p class="text-stone-600 text-sm">Criação de scripts robustos com tratamento de erros e
-                            resiliência.</p>
-                    </div>
-                </div>
-
-                <div class="flex gap-4 items-start">
-                    <div
-                        class="w-10 h-10 bg-stone-900 text-white flex items-center justify-center font-bold ui-font shrink-0">
-                        4</div>
-                    <div>
-                        <h3 class="font-bold ui-font mb-1">Geração de Relatórios</h3>
-                        <p class="text-stone-600 text-sm">Transformação dos dados brutos em relatórios organizados e
-                            insights acionáveis.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- EXEMPLO DE RELATÓRIO API -->
-    <section id="exemplo-api" class="py-20 px-6 bg-stone-900 text-white border-b-2 border-stone-800">
-        <div class="max-w-2xl mx-auto text-center">
-            <h2 class="text-2xl font-bold mb-12 ui-font">Aplicações</h2>
-
-            <div class="grid grid-cols-2 gap-6 text-left">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div class="border border-white/20 p-4">
-                    <i data-lucide="trending-up" class="w-6 h-6 mb-2"></i>
-                    <h3 class="font-bold ui-font text-sm mb-1">Monitoramento de Preços</h3>
-                    <p class="text-white/60 text-xs">Acompanhe preços de concorrentes em tempo real</p>
+                    <i data-lucide="tags" class="w-5 h-5 mb-2"></i>
+                    <h3 class="font-bold ui-font text-sm mb-1">Scrapers multi-marketplace</h3>
+                    <p class="text-white/60 text-xs">Drogasil, Pague Menos, Panvel, Nissei, São João, Conviva e mais</p>
                 </div>
                 <div class="border border-white/20 p-4">
-                    <i data-lucide="package-search" class="w-6 h-6 mb-2"></i>
-                    <h3 class="font-bold ui-font text-sm mb-1">Catálogo de Produtos</h3>
-                    <p class="text-white/60 text-xs">Extraia informações completas de produtos</p>
+                    <i data-lucide="cpu" class="w-5 h-5 mb-2"></i>
+                    <h3 class="font-bold ui-font text-sm mb-1">Automação de retaguarda</h3>
+                    <p class="text-white/60 text-xs">Cadastro e remarcação de preços em lote com pyautogui</p>
                 </div>
                 <div class="border border-white/20 p-4">
-                    <i data-lucide="map-pin" class="w-6 h-6 mb-2"></i>
-                    <h3 class="font-bold ui-font text-sm mb-1">Dados de Localização</h3>
-                    <p class="text-white/60 text-xs">Colete dados de lojas, estoques e disponibilidade</p>
+                    <i data-lucide="file-stack" class="w-5 h-5 mb-2"></i>
+                    <h3 class="font-bold ui-font text-sm mb-1">Relatório Operacional</h3>
+                    <p class="text-white/60 text-xs">Gerador web de relatórios com importação de planilhas e ExcelJS</p>
                 </div>
                 <div class="border border-white/20 p-4">
-                    <i data-lucide="line-chart" class="w-6 h-6 mb-2"></i>
-                    <h3 class="font-bold ui-font text-sm mb-1">Análise de Mercado</h3>
-                    <p class="text-white/60 text-xs">Gere relatórios de inteligência competitiva</p>
+                    <i data-lucide="alert-triangle" class="w-5 h-5 mb-2"></i>
+                    <h3 class="font-bold ui-font text-sm mb-1">Identificador de anomalias</h3>
+                    <p class="text-white/60 text-xs">Extração SQL + Pandas para auditoria de custos de compra</p>
+                </div>
+                <div class="border border-white/20 p-4">
+                    <i data-lucide="file-search" class="w-5 h-5 mb-2"></i>
+                    <h3 class="font-bold ui-font text-sm mb-1">Buscador de códigos</h3>
+                    <p class="text-white/60 text-xs">Leitura de PDFs, cruzamento de princípios ativos e geração de SQL</p>
                 </div>
             </div>
         </div>
@@ -487,7 +865,23 @@
                 </div>
                 <div>
                     <div class="flex justify-between mb-1 ui-font text-sm font-bold">
-                        <span>Web Scraping</span><span>90%</span>
+                        <span>Web Scraping & APIs</span><span>92%</span>
+                    </div>
+                    <div class="w-full bg-stone-300 h-3 border border-stone-400">
+                        <div class="bg-black h-full" style="width: 92%"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between mb-1 ui-font text-sm font-bold">
+                        <span>SQL & Engenharia de Dados</span><span>88%</span>
+                    </div>
+                    <div class="w-full bg-stone-300 h-3 border border-stone-400">
+                        <div class="bg-black h-full" style="width: 88%"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between mb-1 ui-font text-sm font-bold">
+                        <span>Dashboards & BI</span><span>90%</span>
                     </div>
                     <div class="w-full bg-stone-300 h-3 border border-stone-400">
                         <div class="bg-black h-full" style="width: 90%"></div>
@@ -495,20 +889,25 @@
                 </div>
                 <div>
                     <div class="flex justify-between mb-1 ui-font text-sm font-bold">
-                        <span>Excel</span><span>95%</span>
+                        <span>Machine Learning & Previsão</span><span>82%</span>
                     </div>
                     <div class="w-full bg-stone-300 h-3 border border-stone-400">
-                        <div class="bg-black h-full" style="width: 95%"></div>
+                        <div class="bg-black h-full" style="width: 82%"></div>
                     </div>
                 </div>
-                <div>
-                    <div class="flex justify-between mb-1 ui-font text-sm font-bold">
-                        <span>Análise de Dados</span><span>85%</span>
-                    </div>
-                    <div class="w-full bg-stone-300 h-3 border border-stone-400">
-                        <div class="bg-black h-full" style="width: 85%"></div>
-                    </div>
-                </div>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-3 mt-12 ui-font">
+                <span class="px-3 py-1 border border-stone-400 text-xs">Pandas</span>
+                <span class="px-3 py-1 border border-stone-400 text-xs">DuckDB</span>
+                <span class="px-3 py-1 border border-stone-400 text-xs">Parquet</span>
+                <span class="px-3 py-1 border border-stone-400 text-xs">FastAPI</span>
+                <span class="px-3 py-1 border border-stone-400 text-xs">Streamlit</span>
+                <span class="px-3 py-1 border border-stone-400 text-xs">Plotly</span>
+                <span class="px-3 py-1 border border-stone-400 text-xs">XGBoost</span>
+                <span class="px-3 py-1 border border-stone-400 text-xs">Docker</span>
+                <span class="px-3 py-1 border border-stone-400 text-xs">Git</span>
+                <span class="px-3 py-1 border border-stone-400 text-xs">Pytest</span>
             </div>
         </div>
     </section>
@@ -521,10 +920,10 @@
             </div>
 
             <h2 class="text-2xl font-bold mb-2">Vamos conversar?</h2>
-            <p class="text-stone-500 italic mb-8">Interessado nesta solução? Entre em contato.</p>
+            <p class="text-stone-500 italic mb-8">Interessado em automatizar dados? Entre em contato.</p>
 
             <div class="space-y-4 max-w-sm mx-auto ui-font">
-                <a href="mailto:mateusjairan@gmail.com"
+                <a href="mailto:mateusjairan@outlook.com"
                     class="flex items-center justify-between p-4 border-2 border-stone-900 hover:bg-stone-200 transition-colors">
                     <span class="font-bold">Email</span>
                     <span class="text-sm text-stone-600">mateusjairan@outlook.com</span>
@@ -592,6 +991,32 @@
 
         // Inicializa ícones
         lucide.createIcons();
+
+        // Revela os blocos suavemente conforme entram na tela
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (!reduceMotion && 'IntersectionObserver' in window) {
+            const targets = [];
+
+            document.querySelectorAll('section > div').forEach((container) => {
+                Array.from(container.children).forEach((child, index) => {
+                    child.classList.add('reveal');
+                    child.style.transitionDelay = Math.min(index * 60, 240) + 'ms';
+                    targets.push(child);
+                });
+            });
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.08, rootMargin: '0px 0px -8% 0px' });
+
+            targets.forEach((target) => observer.observe(target));
+        }
     </script>
 </body>
 
